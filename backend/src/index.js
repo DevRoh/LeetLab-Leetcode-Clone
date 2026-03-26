@@ -5,8 +5,13 @@ import dotenv from 'dotenv'
 dotenv.config({path:"./.env"})
 const app = express()
 
+app.use(express.json())
 
 const PORT = process.env.PORT
+
+app.get("/",(req,res)=> {
+    res.send("Hello Welcome to Leetlab")
+})
 
 app.listen(PORT,()=>{
     console.log(`Server is running on ${PORT}`)
